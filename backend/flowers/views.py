@@ -34,3 +34,10 @@ def portfolio(request):
         request,
         'portfolio.html'
     )
+
+
+def delivery(request):
+    return render(
+        request,
+        'delivery.html'
+    )

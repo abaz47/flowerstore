@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import bouquets, constructor, index, portfolio, showcase
+from .views import bouquets, constructor, delivery, index, portfolio, showcase
 
 app_name = 'flowers'
 
@@ -10,4 +10,5 @@ urlpatterns = [
     path('bouquets', bouquets, name='bouquets'),
     path('constructor', constructor, name='constructor'),
     path('portfolio', portfolio, name='portfolio'),
+    path('delivery', delivery, name='delivery'),
 ]
