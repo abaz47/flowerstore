@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .models import Flower
+
 
 def index(request):
     return render(
@@ -11,7 +13,10 @@ def index(request):
 def showcase(request):
     return render(
         request,
-        'showcase.html'
+        'showcase.html',
+        {
+            'flowers': Flower.objects.filter(is_visible=True)
+        }
     )
 
 

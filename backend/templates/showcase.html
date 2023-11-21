@@ -3,4 +3,11 @@
 
 {% block title %}Витрина{% endblock %}
 
-{% block content %}Контент витрины{% endblock %}
+{% block content %}
+    {% for flower in flowers %}
+        <div>
+            {{flower.name}} </br>
+            Цена: {{flower.sell_price}}
+        </div>
+    {% endfor %}
+{% endblock %}
