@@ -9,4 +9,6 @@ site.unregister((Group, User))
 
 @register(Flower)
 class FlowerAdmin(ModelAdmin):
-    list_display = ('pk', 'name', 'buy_price', 'sell_price', 'is_visible')
+    list_display = (
+        'pk', 'name', 'buy_price', 'sell_price', 'is_visible', 'image'
+    )

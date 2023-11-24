@@ -4,10 +4,15 @@
 {% block title %}Витрина{% endblock %}
 
 {% block content %}
-    {% for flower in flowers %}
-        <div>
-            {{flower.name}} </br>
-            Цена: {{flower.sell_price}}
+    <div class="container text-center">
+        <div class="row row-cols-3">
+            {% for flower in flowers %}
+                <div class="col">
+                    <img class="img-fluid" src="{{media_url}}{{flower.image}}"></br>
+                    {{flower.name}} </br>
+                    Цена: {{flower.sell_price}}
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </div>
 {% endblock %}

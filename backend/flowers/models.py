@@ -5,6 +5,7 @@ from django.db.models import (
     BooleanField,
     CharField,
     DecimalField,
+    ImageField,
     Model
 )
 
@@ -25,6 +26,12 @@ class Flower(Model):
         decimal_places=FLOWER_PRICE_DECIMAL_PLACES,
         max_digits=FLOWER_PRICE_MAX_DIGITS,
         verbose_name='Закупочная цена'
+    )
+    image = ImageField(
+        blank=True,
+        null=True,
+        upload_to='flowers/',
+        verbose_name='Фото цветка'
     )
     is_visible = BooleanField(
         default=False,

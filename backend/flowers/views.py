@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from flowerstore.settings import MEDIA_URL
 from .models import Flower
 
 
@@ -15,6 +16,7 @@ def showcase(request):
         request,
         'showcase.html',
         {
+            'media_url': MEDIA_URL,
             'flowers': Flower.objects.filter(is_visible=True)
         }
     )
