@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from flowerstore.settings import MEDIA_URL
+from .settings import MEDIA_URL
 from .models import Flower
 
 

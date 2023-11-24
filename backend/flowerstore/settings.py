@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flowers.apps.FlowersConfig',
+    'flowerstore.apps.FlowerstoreConfig',
 ]
 
 MIDDLEWARE = [

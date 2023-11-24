@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <a
             class="navbar-brand"
-            href="{% url 'flowers:index' %}"
+            href="{% url 'index' %}"
             >
         ЛОГО+НАЗВАНИЕ
         </a>
@@ -13,9 +13,9 @@
                     <a
                         class="
                             nav-link
-                            {% if view_name  == 'flowers:showcase' %}active{% endif %}
+                            {% if view_name  == 'showcase' %}active{% endif %}
                             "
-                        href="{% url 'flowers:showcase' %}"
+                        href="{% url 'showcase' %}"
                         >
                     ЦВЕТЫ
                     </a>
@@ -24,9 +24,9 @@
                     <a
                         class="
                             nav-link
-                            {% if view_name  == 'flowers:bouquets' %}active{% endif %}
+                            {% if view_name  == 'bouquets' %}active{% endif %}
                             "
-                        href="{% url 'flowers:bouquets' %}"
+                        href="{% url 'bouquets' %}"
                         >
                     БУКЕТЫ
                     </a>
@@ -35,9 +35,9 @@
                     <a
                         class="
                             nav-link
-                            {% if view_name  == 'flowers:constructor' %}active{% endif %}
+                            {% if view_name  == 'constructor' %}active{% endif %}
                             "
-                        href="{% url 'flowers:constructor' %}"
+                        href="{% url 'constructor' %}"
                         >
                     КОНСТРУКТОР
                     </a>
@@ -46,9 +46,9 @@
                     <a
                         class="
                             nav-link
-                            {% if view_name  == 'flowers:portfolio' %}active{% endif %}
+                            {% if view_name  == 'portfolio' %}active{% endif %}
                             "
-                        href="{% url 'flowers:portfolio' %}"
+                        href="{% url 'portfolio' %}"
                         >
                     ПОРТФОЛИО
                     </a>
@@ -57,9 +57,9 @@
                     <a
                         class="
                             nav-link
-                            {% if view_name  == 'flowers:delivery' %}active{% endif %}
+                            {% if view_name  == 'delivery' %}active{% endif %}
                             "
-                        href="{% url 'flowers:delivery' %}"
+                        href="{% url 'delivery' %}"
                         >
                     ДОСТАВКА
                     </a>
