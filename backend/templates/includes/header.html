@@ -1,70 +1,112 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <a
-            class="navbar-brand"
-            href="{% url 'index' %}"
-            >
-        ЛОГО+НАЗВАНИЕ
-        </a>
-        {% with request.resolver_match.view_name as view_name %}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a
-                        class="
-                            nav-link
-                            {% if view_name  == 'showcase' %}active{% endif %}
-                            "
+{% with request.resolver_match.view_name as view_name %}
+<header data-bs-theme="dark">
+    <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-evenly mb-md-0">
+                <li>
+                    <a 
+                        href="tel:{{ labels.phone }}"
+                        class="nav-link px-2 text-white"
+                        >
+                        {% include 'symbols/telephone.html' %}<strong>{{ labels.phone_label }}</strong>
+                    </a>
+                </li>                
+                <li>
+                    <a 
                         href="{% url 'showcase' %}"
+                        class="
+                            nav-link px-2
+                            {% if view_name  == 'showcase' %} text-secondary {% else %} text-white {% endif %}
+                            "
                         >
-                    ЦВЕТЫ
+                        {{ labels.showcase }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a
-                        class="
-                            nav-link
-                            {% if view_name  == 'bouquets' %}active{% endif %}
-                            "
+                <li>
+                    <a 
                         href="{% url 'bouquets' %}"
+                        class="
+                            nav-link px-2
+                            {% if view_name  == 'bouquets' %} text-secondary {% else %} text-white {% endif %}
+                            "
                         >
-                    БУКЕТЫ
+                        {{ labels.bouquets }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a
-                        class="
-                            nav-link
-                            {% if view_name  == 'constructor' %}active{% endif %}
-                            "
+                <li>
+                    <a 
                         href="{% url 'constructor' %}"
+                        class="
+                            nav-link px-2 
+                            {% if view_name  == 'constructor' %} text-secondary {% else %} text-white {% endif %}
+                            "
                         >
-                    КОНСТРУКТОР
+                        {{ labels.constructor }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a
-                        class="
-                            nav-link
-                            {% if view_name  == 'portfolio' %}active{% endif %}
-                            "
+                <li>
+                    <a 
                         href="{% url 'portfolio' %}"
+                        class="
+                            nav-link px-2
+                            {% if view_name  == 'portfolio' %} text-secondary {% else %} text-white {% endif %}
+                            "
                         >
-                    ПОРТФОЛИО
+                        {{ labels.portfolio }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a
-                        class="
-                            nav-link
-                            {% if view_name  == 'delivery' %}active{% endif %}
-                            "
+                <li>
+                    <a 
                         href="{% url 'delivery' %}"
+                        class="
+                            nav-link px-2
+                            {% if view_name  == 'delivery' %} text-secondary {% else %} text-white {% endif %}
+                        "
                         >
-                    ДОСТАВКА
+                        {{ labels.delivery }}
                     </a>
                 </li>
             </ul>
-        {% endwith %}
+        </div>
     </div>
-</nav>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <strong>{{labels.shop}}&nbsp;</strong>
+                {% if view_name  == 'showcase' %}
+                    {% include 'symbols/chevron_double_right.html' %}
+                    <strong>&nbsp;{{ labels.showcase }}</strong>
+                {% endif %}
+                {% if view_name  == 'bouquets' %}
+                   {% include 'symbols/chevron_double_right.html' %}
+                    <strong>&nbsp;{{ labels.bouquets }}</strong>
+                {% endif %}
+                {% if view_name  == 'constructor' %}
+                   {% include 'symbols/chevron_double_right.html' %}
+                    <strong>&nbsp;{{ labels.constructor }}</strong>                
+                {% endif %}
+                {% if view_name  == 'portfolio' %}
+                    {% include 'symbols/chevron_double_right.html' %}
+                    <strong>&nbsp;{{ labels.portfolio }}</strong>            
+                {% endif %}
+                {% if view_name  == 'delivery' %}
+                    {% include 'symbols/chevron_double_right.html' %}
+                    <strong>&nbsp;{{ labels.delivery }}</strong>           
+                {% endif %}
+            </a>
+            <button 
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarHeader"
+                aria-controls="navbarHeader"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endwith %}
