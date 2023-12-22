@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Главная{% endblock %}
+{% block title %} {{labels.index_title}} — {{ labels.shop }} {% endblock %}
 
-{% block content %}Контент главной{% endblock %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        {{ labels.index_content }}
+    </div>
+</div>
+{% endblock %}
